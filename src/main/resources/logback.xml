@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<property name="logs" value="/Users/wangzhy/wangzhydev/workdir/wangzhy/logs"/>
+	<property name="encodePattern" value="%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{35}  %msg%n"/>
+
+	<appender class="ch.qos.logback.core.ConsoleAppender" name="STDOUT">
+		<encoder>
+			<pattern>${encodePattern}</pattern>
+		</encoder>
+	</appender>
+	<appender class="ch.qos.logback.core.FileAppender" name="FILE">
+		<encoder>
+			<pattern>${encodePattern}</pattern>
+		</encoder>
+		<file>${logs}/javacode.log</file>
+	</appender>
+	<root level="INFO">
+		<appender-ref ref="STDOUT"/>
+		<appender-ref ref="FILE"/>
+	</root>
+	<!-- 系统日志 -->
+</configuration>
